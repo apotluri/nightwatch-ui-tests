@@ -9,7 +9,7 @@ module.exports = {
             client.url('http://www.google.com');
             googleHome.sendKeys('@searchText', ['facebook', client.Keys.TAB]);
             googleHome.click('@clickBtn');
-            googleHome.verify.containsText('#resultStats','Abouts');
+            googleHome.verify.containsText('#resultStats','About');
             client.end();
     }
 };
