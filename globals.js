@@ -25,17 +25,18 @@ module.exports = {
         console.log(results);
         reporter.fn(results, done);
     },
-    afterEach: function (client, done) {
+   afterEach: function (client, done) {
         client.end();
         setTimeout(function () {
-            done();
-        }, 200);
-    },
+           done();
+       }, 200);
+   },
     beforeEach: function (client, done) {
-
+        client.maximizeWindow();
         setTimeout(function () {
             done();
         }, 200);
     },
     rootAppSelector: '#react-app-hook',
+    password: process.env.password
 };

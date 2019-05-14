@@ -10,7 +10,8 @@ module.exports = {
             googleHome.sendKeys('@searchText', ['facebook', client.Keys.TAB]);
             googleHome.click('@clickBtn');
             googleHome.verify.containsText('#resultStats','About');
-            client.end();
+            googleHome.click('@link');
+            googleHome.facebookLogin();
     }
 };
 
