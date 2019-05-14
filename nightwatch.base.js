@@ -1,5 +1,7 @@
 const seleniumServer = require('selenium-server');
 const chromedriver = require('chromedriver');
+const geckodriver = require('geckodriver');
+const iedriver = require('iedriver');
 
 const nightwatch_config = {
     selenium: {
@@ -10,6 +12,7 @@ const nightwatch_config = {
         selenium_port: 4444,
         cli_args: {
             'webdriver.chrome.driver': chromedriver.path,
+            'webdriver.gecko.driver': geckodriver.path,
         }
     }, test_workers: {
         "enabled": false,
@@ -39,7 +42,7 @@ const nightwatch_config = {
                         '--ssl-version-max=tls1', // AVOID CREDENTIALS ERROR
                         // '--no-proxy-server',      // UNCOMMENT FOR LOCAL TESTING
                         '--disable-extensions',
-                        // '--headless',             // RUN CHROME HEADLESS (!),
+                        // '--headless',
                     ]
                 }
             }
